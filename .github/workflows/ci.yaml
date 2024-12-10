@@ -1,0 +1,21 @@
+name: Compile Chapel Examples
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository_owner }}/chapel-github-ci:latest
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.github_token }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Chapel Examples
+        run: |
+          # Assuming the Chapel code is in a file named "hello.chpl"
+          make chpl hello
