@@ -15,5 +15,5 @@ jobs:
       - name: Compile Chapel Examples
         run: |
           # Assuming the Chapel code is in a file named "hello.chpl"
-         chpl hello.chpl
-         ./hello
+          chpl hello.chpl
+          ./hello
