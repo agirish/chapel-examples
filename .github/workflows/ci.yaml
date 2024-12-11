@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: ghcr.io/chapel-lang/chapel-github-ci:latest
+      image: agirish/chapel:latest
       credentials:
         username: ${{ github.actor }}
         password: ${{ secrets.github_token }}
