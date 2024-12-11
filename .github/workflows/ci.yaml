@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: agirish/chapel:latest
-      credentials:
-        username: ${{ github.actor }}
-        password: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@v4
       - name: Compile Chapel Examples
