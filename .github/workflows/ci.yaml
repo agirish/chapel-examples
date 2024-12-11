@@ -9,7 +9,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: agirish/chapel:latest
+      image: chapel/chapel:latest
     steps:
       - uses: actions/checkout@v4
       - name: Compile Chapel Examples
