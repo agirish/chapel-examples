@@ -6,14 +6,7 @@ on:
   pull_request:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    container:
-      image: chapel/chapel:latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Compile Chapel Examples
-        run: |
-          # Assuming the Chapel code is in a file named "hello.chpl"
-          chpl hello.chpl
-          ./hello
+  build-and-run-chapel:
+    uses: agirish/chapel-workflows/.github/workflows/compile-with-chapel.yml@main
+    with:
+      file_name: hello.chpl
